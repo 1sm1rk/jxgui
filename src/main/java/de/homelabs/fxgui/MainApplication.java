@@ -30,6 +30,8 @@ public class MainApplication extends Application {
 		
 		stage = primaryStage;
         stageManager = applicationContext.getBean(StageManager.class, primaryStage);
+        showHomepage();
+        
         Scene scene = stage.getScene();
         //EventHandler<MouseEvent> handler;
         scene.setOnMousePressed( handler -> {
@@ -38,8 +40,8 @@ public class MainApplication extends Application {
         });
         
         scene.setOnMouseDragged( handler -> {
-        	stage.setX(handler.getSceneX() -x);
-        	stage.setY(handler.getSceneY() -y);
+        	//stage.setX(handler.getSceneX() -x);
+        	//stage.setY(handler.getSceneY() -y);
         	
         	stage.setOpacity(.8);
         });
@@ -47,7 +49,7 @@ public class MainApplication extends Application {
         scene.setOnMouseReleased( handler -> {
         	stage.setOpacity(1);
         });
-        showHomepage();
+        
 	}
 
 	@Override
